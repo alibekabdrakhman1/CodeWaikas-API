@@ -1,6 +1,6 @@
 const { ObjectId,MongoClient } = require("mongodb") ;
 const express = require('express');
-const uri = "mongodb+srv://alibek1:253165@codewaikas.kzajs.mongodb.net/?retryWrites=true&w=majority";
+const dotenv = require('dotenv').config();
 const app = express();
 app.use(express.json());
 
@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.json);
 const PORT = process.env.PORT || 3000;
 
-const client = new MongoClient(uri); 
+const client = new MongoClient(process.env.MONGODB_URI); 
 
 client.connect().then((res) => {
     console.log('db connected');
