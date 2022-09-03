@@ -13,14 +13,6 @@ client.connect().then((res) => {
     console.log('db connected');
     const db = client.db('CodeWaikas');
     const collection = db.collection('Waikastar');
-    // let changeStream = collection.watch();
-    // changeStream.on("change", next => {
-        //     // process any change event
-    //     if (next.operationType == 'update') {
-        //         res.send('updated')
-        //     }
-        //     console.log("received a change to the collection: \t", next);
-        // });
 }).catch((err) => {
     console.log(err);
 })
